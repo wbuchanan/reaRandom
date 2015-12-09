@@ -69,13 +69,14 @@ setGeneric("setApiKey",
 
 setMethod(f = "setApiKey", signature("character"),
 		  definition = function(api = "character") {
+		  	apiKey <- ""
 		  	tryCatch({
-		  		       newapikey = scan(api, what = "character")
+		  		       apiKey <- scan(api, what = "character")
 		  		     }, error = function(e) {
-		  		     	newapikey = api
+		  		     	apiKey <- api
 		  		     },
 		  			 finally = {
-		  			 	REARandom@apiKey = newapikey
+		  			 	REARandom@apiKey = apiKey
 		  			 })
 		  }, valueClass = "REARandom")
 
@@ -114,9 +115,9 @@ setMethod(f = "setApiKey", signature("missing"),
 #' @export reaRandom
 #'
 
-reaRandom <- function(api = NULL) {
-	reaRandomObject <- new("REARandom")
-	reaRandomObject.setApiKey(api)
+reaRandom <- function(...) {
+	reaRandomObject <- new("REARandom", ...)
+	this.setApiKey(api)
 	validObject(reaRandomObject)
 	return(reaRandomObject)
 }

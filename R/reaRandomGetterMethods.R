@@ -64,6 +64,11 @@ setMethod(f = "getRandom",
 		  			 				    simplifyMatrix = simplifyMatrix,
 		  			 				    flatten = flatten)
 
+		  # Make sure the payload ID is the same as the ID passed in the request
+		  if (payload[["id"]] != .Object@id) {
+		      stop("Requesting and Payload IDs do not match")
+		  }
+
 		  # Return the payload
 		  return(payload)
 
