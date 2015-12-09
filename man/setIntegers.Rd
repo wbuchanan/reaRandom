@@ -7,16 +7,16 @@
 \usage{
 
   \S4method{setIntegers}{numeric,numeric,numeric,numeric,logical,numeric}(id = 42,
-  n = 1, min = 1e+06, max = 9999999, replacement = FALSE, base = 10)
+  n = 1, min = 1, max = 999, replacement = FALSE, base = 10)
 }
 \arguments{
 \item{id}{ID Used for retrieval and matching of API call request and payload; default is 42.}
 
 \item{n}{Number of random values to generate; default is 1.}
 
-\item{min}{The minimum value integer to use for the request; default is 1,000,000.}
+\item{min}{The minimum value integer to use for the request; default is 1.}
 
-\item{max}{The maximum value integer to use for the request; default is 9,999,999.}
+\item{max}{The maximum value integer to use for the request; default is 999.}
 
 \item{replacement}{Whether the values should be sampled with or without replacement
 from the distribution.}
@@ -37,12 +37,17 @@ call to Random.org's generateIntegers method.
 		myNewReaRandomObject <- reaRandom()
 
 		# Set object for retrieval of random integer values
-		myNewReaRandomObject.setIntegers(n = 1000, min = 1000000, max = 9999999)
+		myNewReaRandomObject.setIntegers(id = 12,
+										 n = 1000,
+										 min = 1000,
+										 max = 9999,
+										 replacement = TRUE,
+										 base = 8)
 
 }
 }
 \seealso{
-Other REARandom.Constructor.Methods: \code{\link{setApiKey}},
+Other REARandom Constructor Methods: \code{\link{setApiKey}},
   \code{\link{setBLOBs,numeric,numeric,numeric,character-method}},
   \code{\link{setDecimals,numeric,numeric,numeric,logical-method}},
   \code{\link{setNormal,numeric,numeric,numeric,numeric,numeric-method}},

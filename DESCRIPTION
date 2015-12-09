@@ -5,13 +5,15 @@ Version: 0.0.0
 Author: Billy Buchanan
 Maintainer: Billy Buchanan <William.Buchanan@mpls.k12.mn.us>
 Description: Provides API access to Random.org's random number generators
-License: GNU
+License: GNU (v 2.0)
 LazyData: TRUE
 Depends:
+	magrittr,
 	methods,
     jsonlite,
     RCurl
 Collate:
     'reaRandom.R'
     'reaRandomConstructorMethods.R'
+    'reaRandomGetterMethods.R'
 RoxygenNote: 5.0.1

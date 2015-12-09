@@ -1,3 +1,5 @@
+#' Method to create object to pass to the generateIntegers method of the
+#' Random.org API
 #' @title Random Integers
 #' @description Method to create REARandom object used for Random.org method
 #' call to get random integers.
@@ -24,8 +26,8 @@ setGeneric("setIntegers",
 #' call to Random.org's generateIntegers method.
 #' @param id ID Used for retrieval and matching of API call request and payload; default is 42.
 #' @param n Number of random values to generate; default is 1.
-#' @param min The minimum value integer to use for the request; default is 1,000,000.
-#' @param max The maximum value integer to use for the request; default is 9,999,999.
+#' @param min The minimum value integer to use for the request; default is 1.
+#' @param max The maximum value integer to use for the request; default is 999.
 #' @param replacement Whether the values should be sampled with or without replacement
 #' from the distribution.
 #' @param base Which base value should the numbers be reported in;
@@ -39,7 +41,12 @@ setGeneric("setIntegers",
 #' 		myNewReaRandomObject <- reaRandom()
 #'
 #' 		# Set object for retrieval of random integer values
-#' 		myNewReaRandomObject.setIntegers(n = 1000, min = 1000000, max = 9999999)
+#' 		myNewReaRandomObject.setIntegers(id = 12,
+#' 										 n = 1000,
+#' 										 min = 1000,
+#' 										 max = 9999,
+#' 										 replacement = TRUE,
+#' 										 base = 8)
 #'
 #' }
 #' @family REARandom Constructor Methods
@@ -50,7 +57,7 @@ setGeneric("setIntegers",
 
 setMethod(f = "setIntegers",
 		  signature("numeric", "numeric", "numeric", "numeric", "logical", "numeric"),
-		  definition = function(id = 42, n = 1, min = 1000000, max = 9999999,
+		  definition = function(id = 42, n = 1, min = 1, max = 999,
 		  					  replacement = FALSE, base = 10) {
 
 		  # Check number of values requested
@@ -68,23 +75,22 @@ setMethod(f = "setIntegers",
 		  REARandom@id <- id
 
 		  # Set API Method parameters
-		  REARandom@parameters <- as.list("n" = n, "min" = min, "max" = max,
-		    			             "replacement" = replacement, "base" = base)
+		  REARandom@parameters <- as.list("apiKey" = .Object@apiKey,
+		  								"n" = n,
+		  								"min" = min,
+		  								"max" = max,
+		  								"replacement" = replacement,
+		  								"base" = base)
 
 }, valueClass = "REARandom") # End Method declaration
 
 #' Method to create object used for generateDecimalFractions API Method
 #' @title Get Fractional Random Values
 #' @description Creates object used to Random.org's generateDecimalFractions API method
-#' @param id An ID number used to match response to request. Defaults to 42.
-#' @param n The number of random values to return. Must be in [1, 1e4]; defaults to 1.
 #' @param decimalPlaces The number of decimal places to return.  Must be in [1, 20]; defaults to 1.
-#' @param replacement Should numbers be sampled with or without replacement.
-#' 			Default is FALSE (e.g., unique values).
 #' @export setDecimals
 #' @docType methods
 #' @rdname REARandom-methods
-#' @aliases setDecimals, reaRandom
 #'
 
 setGeneric("setDecimals",
@@ -107,7 +113,10 @@ setGeneric("setDecimals",
 #' 		myNewReaRandomObject <- reaRandom()
 #'
 #' 		# Set object for retrieval of fractional random variables
-#' 		myNewReaRandomObject.setDecimals(id = 42, n = 300, decimalPlaces = 5, replacement = TRUE)
+#' 		myNewReaRandomObject.setDecimals(id = 42,
+#' 										 n = 300,
+#' 										 decimalPlaces = 5,
+#' 										 replacement = TRUE)
 #'
 #' }
 #' @family REARandom Constructor Methods
@@ -134,7 +143,8 @@ setMethod(f = "setDecimals",
 		  REARandom@id <- id
 
 		  # Set the API method parameters
-		  REARandom@parameters <- as.list("n" = n,
+		  REARandom@parameters <- as.list("apiKey" = .Object@apiKey,
+		  								  "n" = n,
 		  								  "decimalPlaces" = decimalPlaces,
 		    			                  "replacement" = replacement)
 
@@ -143,8 +153,6 @@ setMethod(f = "setDecimals",
 #' Method to create object used for generateGaussians API Method
 #' @title Get Gaussian Random Normal Variables from Random.org
 #' @description Creates object used to Random.org's generateGaussians API method
-#' @param id An ID number used to match response to request. Defaults to 42.
-#' @param n The number of random values to return. Must be in [1, 1e4]; defaults to 1.
 #' @param mean Value of the mean for the distribution from which to draw random numbers.
 #' 			Must be in [-1e6, 1e6]; defaults to 0.
 #' @param standardDeviation Value for the standard deviation of the distribution.
@@ -154,7 +162,6 @@ setMethod(f = "setDecimals",
 #' @export setNormal
 #' @docType methods
 #' @rdname REARandom-methods
-#' @aliases setNormal, reaRandom
 #'
 
 setGeneric("setNormal",
@@ -214,7 +221,8 @@ setMethod(f = "setNormal",
 		  REARandom@id <- id
 
 		  # Set the API method parameters
-		  REARandom@parameters <- as.list("n" = n,
+		  REARandom@parameters <- as.list("apiKey" = .Object@apiKey,
+		  								  "n" = n,
 		  								  "mean" = mean,
 		    			                  "standardDeviation" = standardDeviation,
 		  								  "significantDigits" = significantDigits)
@@ -224,17 +232,12 @@ setMethod(f = "setNormal",
 #' Method to create object used for generateStrings API Method
 #' @title Get Random Strings from Random.org
 #' @description Creates object used to Random.org's generateStrings API method
-#' @param id An ID number used to match response to request. Defaults to 42.
-#' @param n The number of random values to return must be in [1, 1e4]
 #' @param length The number of characters to include in each random string (must be in [1, 20])
 #' @param characters The set of characters from which to generate random strings.
 #' 			Must have length <= 80.
-#' @param replacement Should numbers be sampled with or without replacement.
-#' 			Default is FALSE (e.g., unique values).
 #' @export setStrings
 #' @docType methods
 #' @rdname REARandom-methods
-#' @aliases setStrings, reaRandom
 #'
 
 setGeneric("setStrings",
@@ -269,7 +272,7 @@ setGeneric("setStrings",
 #'
 #' }
 #' @family REARandom Constructor Methods
-#' @rdname setStrings-methods
+#' @rdname setStrings
 #' @aliases setStrings,numeric,numeric,numeric,character,logical-method
 #' @export setStrings
 #'
@@ -302,7 +305,8 @@ setMethod(f = "setStrings",
 		  REARandom@id <- id
 
 		  # Set the API method parameters
-		  REARandom@parameters <- as.list("n" = n,
+		  REARandom@parameters <- as.list("apiKey" = .Object@apiKey,
+		  								  "n" = n,
 		  								  "length" = length,
 		    			                  "characters" = characters,
 		  								  "replacement" = replacement)
@@ -312,12 +316,9 @@ setMethod(f = "setStrings",
 #' Method to create object used for generateUUIDs API Method
 #' @title Get Uniform Unique IDentifiers from Random.org
 #' @description Creates object used to Random.org's generateUUIDs API method
-#' @param id An ID number used to match response to request. Defaults to 42.
-#' @param n The number of Unique Uniform IDentifiers to return (must be in [1, 1e3])
 #' @export setUniqueID
 #' @docType methods
 #' @rdname REARandom-methods
-#' @aliases setUniqueID, reaRandom
 #'
 
 setGeneric("setUniqueID",
@@ -341,7 +342,7 @@ setGeneric("setUniqueID",
 #'
 #' }
 #' @family REARandom Constructor Methods
-#' @rdname setUniqueID-methods
+#' @rdname setUniqueID
 #' @aliases setUniqueID,numeric,numeric-method
 #' @export setUniqueID
 #'
@@ -360,21 +361,19 @@ setMethod(f = "setUniqueID",
 		  REARandom@id <- id
 
 		  # Set the API method parameters
-		  REARandom@parameters <- as.list("n" = n)
+		  REARandom@parameters <- as.list("apiKey" = .Object@apiKey,
+		  								  "n" = n)
 
 }, valueClass = "REARandom") # End of Method declaration
 
 #' Method to create object used for generateBlobs API Method
 #' @title Get Binary Large Objects from Random.org
 #' @description Creates object used to Random.org's generateBlobs API method
-#' @param id An ID number used to match response to request. Defaults to 42.
-#' @param n The number of random values to return must be in [1, 100]
 #' @param size The size in bits of the objects to return (must be divisible by 8)
 #' @param format Either 'base64' or 'hex' to specify how the BLOBs are serialized
 #' @export setBLOBs
 #' @docType methods
 #' @rdname REARandom-methods
-#' @aliases setBLOBs, reaRandom
 #'
 
 setGeneric("setBLOBs",
@@ -404,7 +403,7 @@ setGeneric("setBLOBs",
 #'
 #' }
 #' @family REARandom Constructor Methods
-#' @rdname setBLOBs-methods
+#' @rdname setBLOBs
 #' @aliases setBLOBs,numeric,numeric,numeric,character-method
 #' @export setBLOBs
 #'
@@ -432,6 +431,9 @@ setMethod(f = "setBLOBs",
 		  REARandom@id <- id
 
 		  # Set the API method parameters
-		  REARandom@parameters <- as.list("n" = n, "size" = size, "format" = format)
+		  REARandom@parameters <- as.list("apiKey" = .Object@apiKey,
+		  								  "n" = n,
+		  								  "size" = size,
+		  								  "format" = format)
 
 }, valueClass = "REARandom") # End of Method declaration

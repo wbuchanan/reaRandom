@@ -28,7 +28,7 @@ call to Random.org's generateUUIDs method.
 }
 }
 \seealso{
-Other REARandom.Constructor.Methods: \code{\link{setApiKey}},
+Other REARandom Constructor Methods: \code{\link{setApiKey}},
   \code{\link{setBLOBs,numeric,numeric,numeric,character-method}},
   \code{\link{setDecimals,numeric,numeric,numeric,logical-method}},
   \code{\link{setIntegers,numeric,numeric,numeric,numeric,logical,numeric-method}},
