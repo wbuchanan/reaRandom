@@ -270,6 +270,10 @@ setGeneric("setStrings",
 #' }
 #' @family REARandom Constructor Methods
 #' @rdname setStrings
+<<<<<<< HEAD
+=======
+#' @aliases setStrings,numeric,numeric,numeric,character,logical-method
+>>>>>>> 0977e2704c6ebfe471f7f819093720ebd6cd804b
 #' @export setStrings
 #'
 
@@ -339,6 +343,10 @@ setGeneric("setUniqueID",
 #' }
 #' @family REARandom Constructor Methods
 #' @rdname setUniqueID
+<<<<<<< HEAD
+=======
+#' @aliases setUniqueID,numeric,numeric-method
+>>>>>>> 0977e2704c6ebfe471f7f819093720ebd6cd804b
 #' @export setUniqueID
 #'
 
@@ -399,6 +407,10 @@ setGeneric("setBLOBs",
 #' }
 #' @family REARandom Constructor Methods
 #' @rdname setBLOBs
+<<<<<<< HEAD
+=======
+#' @aliases setBLOBs,numeric,numeric,numeric,character-method
+>>>>>>> 0977e2704c6ebfe471f7f819093720ebd6cd804b
 #' @export setBLOBs
 #'
 

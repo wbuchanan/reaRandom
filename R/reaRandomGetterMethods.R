@@ -42,6 +42,10 @@ setGeneric("getRandom",
 #' @import magrittr
 #' @importFrom jsonlite toJSON fromJSON
 #' @importFrom RCurl httpPUT
+<<<<<<< HEAD
+=======
+#' @aliases getRandom,logical,logical,logical,logical-method
+>>>>>>> 0977e2704c6ebfe471f7f819093720ebd6cd804b
 #' @export getRandom
 #'
 
