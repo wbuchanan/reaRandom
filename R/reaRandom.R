@@ -29,6 +29,7 @@ REARandom <- setClass(Class = "REARandom",
 #' @title Function used to validate REARandom objects
 #' @description Validation method for REARandom construction
 #' @param object The S4 class object being validated.
+#' @rdname REARandom-class
 #'
 validREARandom <- function(object) {
 	if (object@requestHome != "https://api.random.org/json-rpc/1/invoke") FALSE
@@ -45,7 +46,6 @@ setValidity("REARandom", validREARandom)
 #' @description The method used to initialize
 #' @param .Object The object being initialized by the method
 #' @rdname REARandom-class
-#' @aliases intialize, REARandom-method
 #'
 
 setMethod("initialize", "REARandom",
@@ -61,7 +61,7 @@ setMethod("initialize", "REARandom",
 #' @title setApiKey
 #' @description Method used to set the ApiKey member of the REARandom class
 #' @param api A character string with the API key, a file name containing the API key, or NULL value
-#' @rdname setApiKey-methods
+#' @rdname setApiKey
 #' @family REARandom Constructor Methods
 #' @docType methods
 #'
@@ -74,8 +74,7 @@ setGeneric("setApiKey",
 #' Method used to allow user to pass a file name/string with the API key
 #' @title setApiKey
 #' @family REARandom Constructor Methods
-#' @aliases setApiKey, reaRandom-method
-#' @rdname setApiKey-methods
+#' @rdname setApiKey
 #' @export setApiKey
 #'
 
@@ -92,8 +91,7 @@ setMethod(f = "setApiKey", signature("character"),
 		  }, valueClass = "REARandom")
 
 #' @family REARandom Constructor Methods
-#' @aliases setApiKey, reaRandom-method
-#' @rdname setApiKey-methods
+#' @rdname setApiKey
 #' @export setApiKey
 #'
 

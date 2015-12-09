@@ -2,9 +2,7 @@
 % Please edit documentation in R/reaRandom.R
 \docType{methods}
 \name{setApiKey}
-\alias{reaRandom-method}
 \alias{setApiKey}
-\alias{setApiKey,}
 \alias{setApiKey,character-method}
 \alias{setApiKey,missing-method}
 \title{setApiKey}
@@ -27,21 +25,21 @@ Method used to allow user to pass a file name/string with the API key
 Generic method declaration for API Key setter
 }
 \seealso{
-Other REARandom.Constructor.Methods: \code{\link{setBLOBs,numeric,numeric,numeric,character-method}},
+Other REARandom Constructor Methods: \code{\link{setBLOBs,numeric,numeric,numeric,character-method}},
   \code{\link{setDecimals,numeric,numeric,numeric,logical-method}},
   \code{\link{setIntegers,numeric,numeric,numeric,numeric,logical,numeric-method}},
   \code{\link{setNormal,numeric,numeric,numeric,numeric,numeric-method}},
   \code{\link{setStrings,numeric,numeric,numeric,character,logical-method}},
   \code{\link{setUniqueID,numeric,numeric-method}}
 
-Other REARandom.Constructor.Methods: \code{\link{setBLOBs,numeric,numeric,numeric,character-method}},
+Other REARandom Constructor Methods: \code{\link{setBLOBs,numeric,numeric,numeric,character-method}},
   \code{\link{setDecimals,numeric,numeric,numeric,logical-method}},
   \code{\link{setIntegers,numeric,numeric,numeric,numeric,logical,numeric-method}},
   \code{\link{setNormal,numeric,numeric,numeric,numeric,numeric-method}},
   \code{\link{setStrings,numeric,numeric,numeric,character,logical-method}},
   \code{\link{setUniqueID,numeric,numeric-method}}
 
-Other REARandom.Constructor.Methods: \code{\link{setBLOBs,numeric,numeric,numeric,character-method}},
+Other REARandom Constructor Methods: \code{\link{setBLOBs,numeric,numeric,numeric,character-method}},
   \code{\link{setDecimals,numeric,numeric,numeric,logical-method}},
   \code{\link{setIntegers,numeric,numeric,numeric,numeric,logical,numeric-method}},
   \code{\link{setNormal,numeric,numeric,numeric,numeric,numeric-method}},

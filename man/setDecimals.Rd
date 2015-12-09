@@ -29,12 +29,15 @@ call to Random.org's generateDecimalFractions method.
 		myNewReaRandomObject <- reaRandom()
 
 		# Set object for retrieval of fractional random variables
-		myNewReaRandomObject.setDecimals(id = 42, n = 300, decimalPlaces = 5, replacement = TRUE)
+		myNewReaRandomObject.setDecimals(id = 42,
+										 n = 300,
+										 decimalPlaces = 5,
+										 replacement = TRUE)
 
 }
 }
 \seealso{
-Other REARandom.Constructor.Methods: \code{\link{setApiKey}},
+Other REARandom Constructor Methods: \code{\link{setApiKey}},
   \code{\link{setBLOBs,numeric,numeric,numeric,character-method}},
   \code{\link{setIntegers,numeric,numeric,numeric,numeric,logical,numeric-method}},
   \code{\link{setNormal,numeric,numeric,numeric,numeric,numeric-method}},
