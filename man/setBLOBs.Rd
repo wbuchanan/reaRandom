@@ -24,15 +24,15 @@ call to Random.org's generateBlobs method.
 \examples{
 \dontrun{
 
-		# Create a new REARandom object
-		myNewReaRandomObject <- reaRandom()
+# Create a new REARandom object
+myNewReaRandomObject <- reaRandom()
 
-		# Set object for retrieval of Binary Large OBjects that are 4MB in Size
-		# and serialized as Hexadecimal values
-		myNewReaRandomObject.setBLOBs(id = 37, n = 12, size = 4096, format = "hex")
+# Set object for retrieval of Binary Large OBjects that are 4MB in Size
+# and serialized as Hexadecimal values
+myNewReaRandomObject.setBLOBs(id = 37, n = 12, size = 4096, format = "hex")
 
-		# Same as above, but 0.5MB objects serialized as base64
-		myNewReaRandomObject.setBLOBs(id = 37, n = 12, size = 512, format = "base64")
+# Same as above, but 0.5MB objects serialized as base64
+myNewReaRandomObject.setBLOBs(id = 37, n = 12, size = 512, format = "base64")
 
 }
 }

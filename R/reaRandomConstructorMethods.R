@@ -37,16 +37,16 @@ setGeneric("setIntegers",
 #' @docType methods
 #' @examples \dontrun{
 #'
-#' 		# Create a new REARandom object
-#' 		myNewReaRandomObject <- reaRandom()
+#' # Create a new REARandom object
+#' myNewReaRandomObject <- reaRandom()
 #'
-#' 		# Set object for retrieval of random integer values
-#' 		myNewReaRandomObject.setIntegers(id = 12,
-#' 										 n = 1000,
-#' 										 min = 1000,
-#' 										 max = 9999,
-#' 										 replacement = TRUE,
-#' 										 base = 8)
+#' # Set object for retrieval of random integer values
+#' myNewReaRandomObject.setIntegers(id = 12,
+#' 									n = 1000,
+#' 									min = 1000,
+#' 									max = 9999,
+#' 									replacement = TRUE,
+#' 									base = 8)
 #'
 #' }
 #' @family REARandom Constructor Methods
@@ -108,14 +108,14 @@ setGeneric("setDecimals",
 #' @docType methods
 #' @examples \dontrun{
 #'
-#' 		# Create a new REARandom object
-#' 		myNewReaRandomObject <- reaRandom()
+#' # Create a new REARandom object
+#' myNewReaRandomObject <- reaRandom()
 #'
-#' 		# Set object for retrieval of fractional random variables
-#' 		myNewReaRandomObject.setDecimals(id = 42,
-#' 										 n = 300,
-#' 										 decimalPlaces = 5,
-#' 										 replacement = TRUE)
+#' # Set object for retrieval of fractional random variables
+#' myNewReaRandomObject.setDecimals(id = 42,
+#' 								 	n = 300,
+#' 								 	decimalPlaces = 5,
+#' 								 	replacement = TRUE)
 #'
 #' }
 #' @family REARandom Constructor Methods
@@ -181,13 +181,15 @@ setGeneric("setNormal",
 #' 			Must be in [2, 20]; defaults to 2.
 #' @examples \dontrun{
 #'
-#' 		# Create a new REARandom object
-#' 		myNewReaRandomObject <- reaRandom()
+#' # Create a new REARandom object
+#' myNewReaRandomObject <- reaRandom()
 #'
-#' 		# Set object for retrieval of Gaussian Random variables with $\mu$ = 100
-#' 		# \& $\sigma$ = 15.
-#' 		myNewReaRandomObject.setNormal(id = 37, mean = 100,
-#' 		standardDeviation = 15, significantDigits = 10)
+#' # Set object for retrieval of Gaussian Random variables with $\mu$ = 100
+#' # \& $\sigma$ = 15.
+#' myNewReaRandomObject.setNormal(id = 37,
+#' 								  mean = 100,
+#' 								  standardDeviation = 15,
+#' 								  significantDigits = 10)
 #'
 #' }
 #' @family REARandom Constructor Methods
@@ -255,17 +257,20 @@ setGeneric("setStrings",
 #' @docType methods
 #' @examples \dontrun{
 #'
-#' 		# Create a new REARandom object
-#' 		myNewReaRandomObject <- reaRandom()
+#' # Create a new REARandom object
+#' myNewReaRandomObject <- reaRandom()
 #'
-#' 		# Create object with characters to use in method call
-#' 		myChars <- c(letters, LETTERS, c(0:9), "!", "@", "#", "$", "%", "^",
+#' # Create object with characters to use in method call
+#' myChars <- c(letters, LETTERS, c(0:9), "!", "@", "#", "$", "%", "^",
 #' 					"&", "-", ",", "?", "|", ":", ";", "<", ">", ",", ".", "_")
 #'
-#' 		# Set object for retrieval of Binary Large OBjects that are 4MB in Size
-#' 		# and serialized as Hexadecimal values
-#' 		myNewReaRandomObject.setStrings(id = 37, n = 12, length = 4096,
-#' 		characters = myChars, replacement = FALSE)
+#' # Set object for retrieval of Binary Large OBjects that are 4MB in Size
+#' # and serialized as Hexadecimal values
+#' myNewReaRandomObject.setStrings(id = 37,
+#' 								   n = 12,
+#' 								   length = 4096,
+#' 								   characters = myChars,
+#' 								   replacement = FALSE)
 #'
 #' }
 #' @family REARandom Constructor Methods
@@ -330,11 +335,11 @@ setGeneric("setUniqueID",
 #' @docType methods
 #' @examples \dontrun{
 #'
-#' 		# Create a new REARandom object
-#' 		myNewReaRandomObject <- reaRandom()
+#' # Create a new REARandom object
+#' myNewReaRandomObject <- reaRandom()
 #'
-#' 		# Set object to retrieve a series of Uniform Unique IDentifiers
-#' 		myNewReaRandomObject.setUniqueID(id = 53, n = 500)
+#' # Set object to retrieve a series of Uniform Unique IDentifiers
+#' myNewReaRandomObject.setUniqueID(id = 53, n = 500)
 #'
 #' }
 #' @family REARandom Constructor Methods
@@ -386,15 +391,15 @@ setGeneric("setBLOBs",
 #' @docType methods
 #' @examples \dontrun{
 #'
-#' 		# Create a new REARandom object
-#' 		myNewReaRandomObject <- reaRandom()
+#' # Create a new REARandom object
+#' myNewReaRandomObject <- reaRandom()
 #'
-#' 		# Set object for retrieval of Binary Large OBjects that are 4MB in Size
-#' 		# and serialized as Hexadecimal values
-#' 		myNewReaRandomObject.setBLOBs(id = 37, n = 12, size = 4096, format = "hex")
+#' # Set object for retrieval of Binary Large OBjects that are 4MB in Size
+#' # and serialized as Hexadecimal values
+#' myNewReaRandomObject.setBLOBs(id = 37, n = 12, size = 4096, format = "hex")
 #'
-#' 		# Same as above, but 0.5MB objects serialized as base64
-#' 		myNewReaRandomObject.setBLOBs(id = 37, n = 12, size = 512, format = "base64")
+#' # Same as above, but 0.5MB objects serialized as base64
+#' myNewReaRandomObject.setBLOBs(id = 37, n = 12, size = 512, format = "base64")
 #'
 #' }
 #' @family REARandom Constructor Methods

@@ -25,12 +25,7 @@ REARandom <- setClass(Class = "REARandom",
 					  			     parameters = "character",
 					  			     id = "numeric"))
 
-#' Validation function for Class REARandom
-#' @title Function used to validate REARandom objects
-#' @description Validation method for REARandom construction
-#' @param object The S4 class object being validated.
-#' @rdname REARandom-class
-#'
+# Validation function for Class REARandom
 validREARandom <- function(object) {
 	if (object@requestHome != "https://api.random.org/json-rpc/1/invoke") FALSE
 	if (object@jsonrpc != "2.0") FALSE
@@ -41,13 +36,7 @@ validREARandom <- function(object) {
 # Sets the validation function for object initialization
 setValidity("REARandom", validREARandom)
 
-#' Initialization method for REARandom class
-#' @title REARandom Initialization Method
-#' @description The method used to initialize
-#' @param .Object The object being initialized by the method
-#' @rdname REARandom-class
-#'
-
+# Initialization method for REARandom class
 setMethod("initialize", "REARandom",
 		  function(.Object) {
 		  	.Object@requestHome = "https://api.random.org/json-rpc/1/invoke"
@@ -109,16 +98,17 @@ setMethod(f = "setApiKey", signature("missing"),
 #' @docType methods
 #' @examples \dontrun{
 #'
-#' 		# Create a new REARandom object in x with made up API key passed as
-#' 		# an argument to the function
-#' 		x <- reaRandom(api = "ABCD123456789abcd")
+#' # Create a new REARandom object in x with made up API key passed as an
+#' # argument to the function
+#' x <- reaRandom(api = "ABCD123456789abcd")
 #'
-#' 		# Same as above but assuming the API key is stored in a file on the
-#' 		# local system
-#' 		x <- reaRandom(api = "~/.randomOrgApiKey")
+#' # Same as above but assuming the API key is stored in a file on the local
+#' # system
+#' x <- reaRandom(api = "~/.randomOrgApiKey")
 #'
-#' 		# Same as above assuming the API key is stored as an option named "reaRandomKey"
-#' 		x <- reaRandom()
+#' # Same as above assuming the API key is stored as an option named
+#' # "reaRandomKey"
+#' x <- reaRandom()
 #'
 #' }
 #' @export reaRandom

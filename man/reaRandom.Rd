@@ -23,16 +23,17 @@ Function to construct new REARandom class objects
 \examples{
 \dontrun{
 
-		# Create a new REARandom object in x with made up API key passed as
-		# an argument to the function
-		x <- reaRandom(api = "ABCD123456789abcd")
+# Create a new REARandom object in x with made up API key passed as an
+# argument to the function
+x <- reaRandom(api = "ABCD123456789abcd")
 
-		# Same as above but assuming the API key is stored in a file on the
-		# local system
-		x <- reaRandom(api = "~/.randomOrgApiKey")
+# Same as above but assuming the API key is stored in a file on the local
+# system
+x <- reaRandom(api = "~/.randomOrgApiKey")
 
-		# Same as above assuming the API key is stored as an option named "reaRandomKey"
-		x <- reaRandom()
+# Same as above assuming the API key is stored as an option named
+# "reaRandomKey"
+x <- reaRandom()
 
 }
 }

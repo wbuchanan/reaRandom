@@ -30,17 +30,20 @@ call to Random.org's generateStrings method.
 \examples{
 \dontrun{
 
-		# Create a new REARandom object
-		myNewReaRandomObject <- reaRandom()
+# Create a new REARandom object
+myNewReaRandomObject <- reaRandom()
 
-		# Create object with characters to use in method call
-		myChars <- c(letters, LETTERS, c(0:9), "!", "@", "#", "$", "\%", "^",
+# Create object with characters to use in method call
+myChars <- c(letters, LETTERS, c(0:9), "!", "@", "#", "$", "\%", "^",
 					"&", "-", ",", "?", "|", ":", ";", "<", ">", ",", ".", "_")
 
-		# Set object for retrieval of Binary Large OBjects that are 4MB in Size
-		# and serialized as Hexadecimal values
-		myNewReaRandomObject.setStrings(id = 37, n = 12, length = 4096,
-		characters = myChars, replacement = FALSE)
+# Set object for retrieval of Binary Large OBjects that are 4MB in Size
+# and serialized as Hexadecimal values
+myNewReaRandomObject.setStrings(id = 37,
+								   n = 12,
+								   length = 4096,
+								   characters = myChars,
+								   replacement = FALSE)
 
 }
 }

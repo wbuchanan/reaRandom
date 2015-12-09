@@ -4,34 +4,14 @@
 \name{REARandom-class}
 \alias{REARandom}
 \alias{REARandom-class}
-\alias{initialize,REARandom-method}
 \alias{reaRandom-class}
-\alias{validREARandom}
 \title{REARandom}
-\usage{
-validREARandom(object)
-
-\S4method{initialize}{REARandom}(.Object)
-}
-\arguments{
-\item{object}{The S4 class object being validated.}
-
-\item{.Object}{The object being initialized by the method}
-}
 \description{
 Defines the base object used for API requests
-
-Validation method for REARandom construction
-
-The method used to initialize
 }
 \details{
 Generates a new S4 object with methods to access random numbers
 provided by Random.org's API
-
-Validation function for Class REARandom
-
-Initialization method for REARandom class
 }
 \section{Slots}{
 

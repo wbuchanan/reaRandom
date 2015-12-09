@@ -29,13 +29,15 @@ call to Random.org's generateGaussians method.
 \examples{
 \dontrun{
 
-		# Create a new REARandom object
-		myNewReaRandomObject <- reaRandom()
+# Create a new REARandom object
+myNewReaRandomObject <- reaRandom()
 
-		# Set object for retrieval of Gaussian Random variables with $\\mu$ = 100
-		# \\& $\\sigma$ = 15.
-		myNewReaRandomObject.setNormal(id = 37, mean = 100,
-		standardDeviation = 15, significantDigits = 10)
+# Set object for retrieval of Gaussian Random variables with $\\mu$ = 100
+# \\& $\\sigma$ = 15.
+myNewReaRandomObject.setNormal(id = 37,
+								  mean = 100,
+								  standardDeviation = 15,
+								  significantDigits = 10)
 
 }
 }

@@ -25,14 +25,14 @@ call to Random.org's generateDecimalFractions method.
 \examples{
 \dontrun{
 
-		# Create a new REARandom object
-		myNewReaRandomObject <- reaRandom()
+# Create a new REARandom object
+myNewReaRandomObject <- reaRandom()
 
-		# Set object for retrieval of fractional random variables
-		myNewReaRandomObject.setDecimals(id = 42,
-										 n = 300,
-										 decimalPlaces = 5,
-										 replacement = TRUE)
+# Set object for retrieval of fractional random variables
+myNewReaRandomObject.setDecimals(id = 42,
+								 	n = 300,
+								 	decimalPlaces = 5,
+								 	replacement = TRUE)
 
 }
 }

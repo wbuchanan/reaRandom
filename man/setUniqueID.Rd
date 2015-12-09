@@ -19,11 +19,11 @@ call to Random.org's generateUUIDs method.
 \examples{
 \dontrun{
 
-		# Create a new REARandom object
-		myNewReaRandomObject <- reaRandom()
+# Create a new REARandom object
+myNewReaRandomObject <- reaRandom()
 
-		# Set object to retrieve a series of Uniform Unique IDentifiers
-		myNewReaRandomObject.setUniqueID(id = 53, n = 500)
+# Set object to retrieve a series of Uniform Unique IDentifiers
+myNewReaRandomObject.setUniqueID(id = 53, n = 500)
 
 }
 }

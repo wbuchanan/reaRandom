@@ -33,16 +33,16 @@ call to Random.org's generateIntegers method.
 \examples{
 \dontrun{
 
-		# Create a new REARandom object
-		myNewReaRandomObject <- reaRandom()
+# Create a new REARandom object
+myNewReaRandomObject <- reaRandom()
 
-		# Set object for retrieval of random integer values
-		myNewReaRandomObject.setIntegers(id = 12,
-										 n = 1000,
-										 min = 1000,
-										 max = 9999,
-										 replacement = TRUE,
-										 base = 8)
+# Set object for retrieval of random integer values
+myNewReaRandomObject.setIntegers(id = 12,
+									n = 1000,
+									min = 1000,
+									max = 9999,
+									replacement = TRUE,
+									base = 8)
 
 }
 }

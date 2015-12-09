@@ -24,17 +24,17 @@ setGeneric("getRandom",
 #' @param flatten A logical passed to the underlying call to jsonlite::fromJSON()
 #' @examples \dontrun{
 #'
-#' 		# Create a new REARandom object
-#' 		myNewReaRandomObject <- reaRandom()
+#' # Create a new REARandom object
+#' myNewReaRandomObject <- reaRandom()
 #'
-#' 		# Set object for retrieval of random integer values
-#' 		myNewReaRandomObject.setIntegers(n = 1000, min = 1000000, max = 9999999)
+#' # Set object for retrieval of random integer values
+#' myNewReaRandomObject.setIntegers(n = 1000, min = 1000000, max = 9999999)
 #'
-#' 		# Get the resulting request from Random.org
-#' 		myNewReaRandomObject.getRandom(simplifyVector = FALSE,
-#' 								 simplifyDataFrame = FALSE,
-#' 								 simplifyMatrix = FALSE,
-#' 								 flatten = FALSE)
+#' # Get the resulting request from Random.org
+#' myNewReaRandomObject.getRandom(simplifyVector = FALSE,
+#' 								  simplifyDataFrame = FALSE,
+#' 								  simplifyMatrix = FALSE,
+#' 								  flatten = FALSE)
 #'
 #' }
 #' @family Retrieval Methods
