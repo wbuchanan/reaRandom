@@ -3,17 +3,19 @@
 \docType{methods}
 \name{setApiKey}
 \alias{setApiKey}
-\alias{setApiKey,character-method}
-\alias{setApiKey,missing-method}
+\alias{setApiKey,REARandom,character-method}
+\alias{setApiKey,REARandom,missing-method}
 \title{setApiKey}
 \usage{
-setApiKey(api)
+setApiKey(REARandomObject, api)
 
-\S4method{setApiKey}{character}(api = "character")
+\S4method{setApiKey}{REARandom,character}(REARandomObject, api = "character")
 
-\S4method{setApiKey}{missing}(api = NULL)
+\S4method{setApiKey}{REARandom,missing}(REARandomObject, api = NULL)
 }
 \arguments{
+\item{REARandomObject}{an Object of class REARandom}
+
 \item{api}{A character string with the API key, a file name containing the API key, or NULL value}
 }
 \description{
@@ -25,25 +27,25 @@ Method used to allow user to pass a file name/string with the API key
 Generic method declaration for API Key setter
 }
 \seealso{
-Other REARandom Constructor Methods: \code{\link{setBLOBs,numeric,numeric,numeric,character-method}},
-  \code{\link{setDecimals,numeric,numeric,numeric,logical-method}},
-  \code{\link{setIntegers,numeric,numeric,numeric,numeric,logical,numeric-method}},
-  \code{\link{setNormal,numeric,numeric,numeric,numeric,numeric-method}},
-  \code{\link{setStrings,numeric,numeric,numeric,character,logical-method}},
-  \code{\link{setUniqueID,numeric,numeric-method}}
+Other REARandom Constructor Methods: \code{\link{setBLOBs,REARandom,numeric,numeric,numeric,character-method}},
+  \code{\link{setDecimals,REARandom,numeric,numeric,numeric,logical-method}},
+  \code{\link{setIntegers,REARandom,numeric,numeric,numeric,numeric,logical,numeric-method}},
+  \code{\link{setNormal,REARandom,numeric,numeric,numeric,numeric,numeric-method}},
+  \code{\link{setStrings,REARandom,numeric,numeric,numeric,character,logical-method}},
+  \code{\link{setUniqueID,REARandom,numeric,numeric-method}}
 
-Other REARandom Constructor Methods: \code{\link{setBLOBs,numeric,numeric,numeric,character-method}},
-  \code{\link{setDecimals,numeric,numeric,numeric,logical-method}},
-  \code{\link{setIntegers,numeric,numeric,numeric,numeric,logical,numeric-method}},
-  \code{\link{setNormal,numeric,numeric,numeric,numeric,numeric-method}},
-  \code{\link{setStrings,numeric,numeric,numeric,character,logical-method}},
-  \code{\link{setUniqueID,numeric,numeric-method}}
+Other REARandom Constructor Methods: \code{\link{setBLOBs,REARandom,numeric,numeric,numeric,character-method}},
+  \code{\link{setDecimals,REARandom,numeric,numeric,numeric,logical-method}},
+  \code{\link{setIntegers,REARandom,numeric,numeric,numeric,numeric,logical,numeric-method}},
+  \code{\link{setNormal,REARandom,numeric,numeric,numeric,numeric,numeric-method}},
+  \code{\link{setStrings,REARandom,numeric,numeric,numeric,character,logical-method}},
+  \code{\link{setUniqueID,REARandom,numeric,numeric-method}}
 
-Other REARandom Constructor Methods: \code{\link{setBLOBs,numeric,numeric,numeric,character-method}},
-  \code{\link{setDecimals,numeric,numeric,numeric,logical-method}},
-  \code{\link{setIntegers,numeric,numeric,numeric,numeric,logical,numeric-method}},
-  \code{\link{setNormal,numeric,numeric,numeric,numeric,numeric-method}},
-  \code{\link{setStrings,numeric,numeric,numeric,character,logical-method}},
-  \code{\link{setUniqueID,numeric,numeric-method}}
+Other REARandom Constructor Methods: \code{\link{setBLOBs,REARandom,numeric,numeric,numeric,character-method}},
+  \code{\link{setDecimals,REARandom,numeric,numeric,numeric,logical-method}},
+  \code{\link{setIntegers,REARandom,numeric,numeric,numeric,numeric,logical,numeric-method}},
+  \code{\link{setNormal,REARandom,numeric,numeric,numeric,numeric,numeric-method}},
+  \code{\link{setStrings,REARandom,numeric,numeric,numeric,character,logical-method}},
+  \code{\link{setUniqueID,REARandom,numeric,numeric-method}}
 }
 

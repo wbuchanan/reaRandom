@@ -11,21 +11,24 @@
 \alias{setUniqueID}
 \title{Random Integers}
 \usage{
-setIntegers(id, n, min, max, replacement, base)
+setIntegers(REARandomObject, id, n, min, max, replacement, base)
 
-setDecimals(id, n, decimalPlaces, replacement)
+setDecimals(REARandomObject, id, n, decimalPlaces, replacement)
 
-setNormal(id, n, mean, standardDeviation, significantDigits)
+setNormal(REARandomObject, id, n, mean, standardDeviation, significantDigits)
 
-setStrings(id, n, length, characters, replacement)
+setStrings(REARandomObject, id, n, length, characters, replacement)
 
-setUniqueID(id, n)
+setUniqueID(REARandomObject, id, n)
 
-setBLOBs(id, n, size, format)
+setBLOBs(REARandomObject, id, n, size, format)
 
-getRandom(simplifyVector, simplifyDataFrame, simplifyMatrix, flatten)
+getRandom(REARandomObject, simplifyVector, simplifyDataFrame, simplifyMatrix,
+  flatten)
 }
 \arguments{
+\item{REARandomObject}{an Object of class REARandom}
+
 \item{id}{ID Used for retrieval and matching of API call request and payload; default is 42.}
 
 \item{n}{Number of random values to generate; default is 1.}
@@ -69,6 +72,8 @@ Must have length <= 80.}
 \item{simplifyMatrix}{A logical passed to the underlying call to jsonlite::fromJSON()}
 
 \item{flatten}{A logical passed to the underlying call to jsonlite::fromJSON()}
+
+\item{REARandomObject}{an Object of class REARandom}
 }
 \description{
 Method to create REARandom object used for Random.org method

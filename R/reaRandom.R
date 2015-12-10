@@ -49,6 +49,7 @@ setMethod("initialize", "REARandom",
 #' Generic method declaration for API Key setter
 #' @title setApiKey
 #' @description Method used to set the ApiKey member of the REARandom class
+#' @param REARandomObject an Object of class REARandom
 #' @param api A character string with the API key, a file name containing the API key, or NULL value
 #' @rdname setApiKey
 #' @family REARandom Constructor Methods
@@ -56,7 +57,7 @@ setMethod("initialize", "REARandom",
 #'
 
 setGeneric("setApiKey",
-		   def = function(api) {
+		   def = function(REARandomObject, api) {
 			standardGeneric("setApiKey")
 			}, valueClass = "REARandom")
 
@@ -67,28 +68,34 @@ setGeneric("setApiKey",
 #' @export setApiKey
 #'
 
-setMethod(f = "setApiKey", signature("character"),
-		  definition = function(api = "character") {
-		  	apiKey <- ""
-		  	tryCatch({
-		  		       apiKey <- scan(api, what = "character")
-		  		     }, error = function(e) {
-		  		     	apiKey <- api
-		  		     },
-		  			 finally = {
-		  			 	REARandom@apiKey = apiKey
-		  			 })
-		  }, valueClass = "REARandom")
+setMethod(f = "setApiKey", signature("REARandom", "character"),
+		  definition = function(REARandomObject, api = "character") {
+		  	e <- simpleError(message = NULL, call = api)
+		  	warn <- simpleWarning(message = NULL, call = api)
+		  	apiKey <- tryCatch(scan(api, what = "character"),
+		  		               error = function(e) e,
+		  					   warning = function(warn) warn)
+		  	return(apiKey)
+		  	REARandomObject@apiKey <- apiKey
+
+		  # Make sure method returns the REARandom class object
+		  return(REARandomObject)
+
+}, valueClass = "REARandom")
 
 #' @family REARandom Constructor Methods
 #' @rdname setApiKey
 #' @export setApiKey
 #'
 
-setMethod(f = "setApiKey", signature("missing"),
-		  definition = function(api = NULL) {
-		  	REARandom@apiKey = getOption("reaRandomKey")
-		  }, valueClass = "REARandom")
+setMethod(f = "setApiKey", signature("REARandom", "missing"),
+		  definition = function(REARandomObject, api = NULL) {
+		  	REARandomObject@apiKey = getOption("reaRandomKey")
+
+		  # Make sure method returns the REARandom class object
+		  return(REARandomObject)
+
+}, valueClass = "REARandom")
 
 #' Function to construct new REARandom class objects
 #' @title reaRandom
@@ -115,9 +122,9 @@ setMethod(f = "setApiKey", signature("missing"),
 #' @export reaRandom
 #'
 
-reaRandom <- function(...) {
-	reaRandomObject <- new("REARandom", ...)
-	this.setApiKey(api)
+reaRandom <- function(api = NULL) {
+	reaRandomObject <-  new("REARandom") %>%
+						setApiKey(api)
 	validObject(reaRandomObject)
 	return(reaRandomObject)
 }
