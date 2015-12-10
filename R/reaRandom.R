@@ -119,12 +119,19 @@ setMethod(f = "setApiKey", signature("REARandom", "missing"),
 #' x <- reaRandom()
 #'
 #' }
+#' @import magrittr
 #' @export reaRandom
 #'
 
 reaRandom <- function(api = NULL) {
-	reaRandomObject <-  new("REARandom") %>%
-						setApiKey(api)
+	reaRandomObject <-  new("REARandom")
+	if (is.null(api)) {
+		reaRandomObject@apiKey = getOption("reaRandomKey")
+	} else if (file.exists(api) == TRUE) {
+		reaRandomObject@apiKey = scan(api, what = "character")
+	} else {
+		reaRandomObject@apiKey = api
+	}
 	validObject(reaRandomObject)
 	return(reaRandomObject)
 }
